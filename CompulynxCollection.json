@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "5edd1438-661c-4cd6-b75f-36ad6cea508e",
+		"name": "CompulynxCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"ADMIN\",\n    \"pin\": \"8009\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/login",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"jdn@tesmail.com\",\n    \"customerId\": \"CUST001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/register",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer regestraton 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"George\",\n    \"lastName\": \"kibira\",\n    \"email\": \"gorge@tesmail.com\",\n    \"customerId\": \"CUST002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/register",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer regestraton 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Moore\",\n    \"lastName\": \"johnson\",\n    \"email\": \"morejson@tesmail.com\",\n    \"customerId\": \"CUST003\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/register",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash deposet X amount 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/account/credit/CUST003?amount=8000",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"account",
+						"credit",
+						"CUST003"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "8000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash deposet X amount 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/account/credit/CUST002?amount=200",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"account",
+						"credit",
+						"CUST002"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get customer balance",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Funds transfer from customer Account to Account B (Amount X)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/account/transfer?amount=100&sourceAcc=CUST003&destAcc=CUST002",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"account",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "100"
+						},
+						{
+							"key": "sourceAcc",
+							"value": "CUST003"
+						},
+						{
+							"key": "destAcc",
+							"value": "CUST002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash WithdrawalY amount 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/account/debit/CUST002?amount=200",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"account",
+						"debit",
+						"CUST002"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash WithdrawalY Y amount 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbXSwiaWF0IjoxNjUxNTAwNTMyLCJleHAiOjE2NTI2NDg0MDB9.LATozN4P67aPgEySgf9XOslSNnfeNFeqJFSp6NLPwd2ub8FetzE8pW0yP6VSJ7e7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}api/v1/account/debit/CUST003?amount=200",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"v1",
+						"account",
+						"debit",
+						"CUST003"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mini-statement",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Search transacton by transacton ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
