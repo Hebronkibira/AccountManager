@@ -31,7 +31,7 @@ public class CustomerService {
 
     @Transactional
     public Customer registerCustomer(Customer customer){
-        Account account= new Account(0.0,"Savings",new Date(),"",customer.getCustomerId());
+        Account account= new Account(0.0,"Savings",new Date(),this.generateAccountNo(),customer.getCustomerId());
         customer.setPin(passwordEncoder.encode(this.generatePin()));
         customerRepository.save(customer);
         accountRepository.save(account);
@@ -40,12 +40,30 @@ public class CustomerService {
     }
 
     public Boolean findCustomerByCustomerId(String customerId){
-        return customerRepository.findCustomerByCustomerId(customerId).isPresent();
+        return customerRepository.findByCustomerId(customerId).isPresent();
     }
     private String generatePin(){
         SecureRandom secureRandom = new SecureRandom();
         String pin=String .valueOf(secureRandom.nextInt(10000109)).substring(1,5); //TODO make the generator to always return a 4 digit number
         System.out.println("Generated customer pin "+pin);
         return pin;
+    }
+
+    private String generateAccountNo(){
+        int count=12;
+        SecureRandom secureRandom = new SecureRandom();
+        char[] account= new char[count];
+        //first non zero digit
+
+        int nextInt = secureRandom.nextInt(9);
+        System.out.println("next Int generated"+nextInt);
+        account[0]=(char) (nextInt +'1');
+        System.out.println("First Digit "+account[0]);
+        for(int i=1;i<count ;i++){
+            account[i]= (char) (secureRandom.nextInt(10)+'0');
+        }
+        System.out.println("Generated account No "+new String(account));
+        //check if account N0 exists//TODO
+        return new String(account);
     }
 }

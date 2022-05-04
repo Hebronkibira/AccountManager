@@ -11,18 +11,18 @@ import org.springframework.transaction.annotation.Transactional;
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
     @Query("SELECT acc.currentBalance FROM Account acc WHERE acc.customerId =:customerId")
-    public Double getCustomerBalance(String customerId);
+    Double getCustomerBalance(String customerId);
 
 
     @Modifying
     @Transactional
     @Query("UPDATE Account acc set acc.currentBalance =:newBalance WHERE acc.customerId=:customerId ")
-    public void debitCustomerAccount(Double newBalance,String customerId);
+   void debitCustomerAccount(Double newBalance,String customerId);
 
     @Modifying
     @Transactional
     @Query("UPDATE Account acc set acc.currentBalance =:newBalance WHERE acc.customerId=:customerId ")
-    public void creditCustomerAccount(Double newBalance,String customerId);
+    void creditCustomerAccount(Double newBalance,String customerId);
 
 
 }
